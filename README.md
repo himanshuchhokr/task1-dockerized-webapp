@@ -1,16 +1,39 @@
-# Task 1 - Dockerized Web Application
+# 🚀 Dockerized Web Application
+
+![Python](https://img.shields.io/badge/Python-3.11-blue)
+![Flask](https://img.shields.io/badge/Flask-Web%20Framework-black)
+![Docker](https://img.shields.io/badge/Docker-Container-blue)
+![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
 
 ## 👨‍💻 Developer
+
 **Himanshu Chhokar**
 
-## 📖 Project Description
-This project is a Dockerized Python Flask web application developed as part of the CodSoft DevOps Internship.
-
-The application displays a portfolio webpage and provides a REST API endpoint to verify that the application is running successfully.
+B.Tech Student  
+Shri Vishwakarma Skill University, Palwal
 
 ---
 
-## 🛠 Technologies Used
+# 📌 Project Overview
+
+This project was developed as part of the **CodSoft DevOps Internship – Task 1**.
+
+The application is containerized using Docker and serves a Flask-based portfolio webpage along with a REST API endpoint to verify the application's health.
+
+---
+
+# ✨ Features
+
+- Responsive Portfolio Website
+- Dockerized Flask Application
+- Gunicorn Web Server
+- REST API
+- Clean UI
+- Docker Compose Support
+
+---
+
+# 🛠️ Tech Stack
 
 - Python
 - Flask
@@ -22,31 +45,43 @@ The application displays a portfolio webpage and provides a REST API endpoint to
 
 ---
 
-## 📂 Project Structure
+# 📁 Project Structure
 
 ```
-task1-dockerized-webapp/
+task1-dockerized-webapp
 │
 ├── app.py
-├── requirements.txt
 ├── Dockerfile
 ├── docker-compose.yml
-├── static/
+├── requirements.txt
 ├── templates/
+├── static/
 └── README.md
 ```
 
 ---
 
-## 🚀 How to Run
+# ⚙️ Installation
 
-### Build Docker Image
+Clone Repository
+
+```bash
+git clone <your-github-repository-link>
+```
+
+Move into Project
+
+```bash
+cd task1-dockerized-webapp
+```
+
+Build Docker Image
 
 ```bash
 docker build -t docker-webapp .
 ```
 
-### Run Container
+Run Container
 
 ```bash
 docker run -p 5001:5000 docker-webapp
@@ -54,51 +89,72 @@ docker run -p 5001:5000 docker-webapp
 
 ---
 
-## API Endpoint
+# 🌐 Application
 
-```
-GET /api/status
-```
-
-Example Response
-
-```json
-{
-  "status": "running",
-  "message": "Task 1 - Dockerized Web Application is live!"
-}
-```
-
----
-
-## Docker Verification
-
-```bash
-docker ps
-```
-
-Container should be running successfully.
-
----
-
-## Output
-
-Application URL
+Home Page
 
 ```
 http://localhost:5001
 ```
 
-API URL
+API Endpoint
 
 ```
-http://localhost:5001/api/status
+GET /api/status
+```
+
+Sample Response
+
+```json
+{
+  "status":"running",
+  "message":"Task 1 - Dockerized Web Application is live!"
+}
 ```
 
 ---
 
-## Internship
+# 📷 Screenshots
 
-CodSoft DevOps Internship
+### Home Page
 
-Task 1 - Dockerized Web Application
+(Add Screenshot Here)
+
+### Docker Running
+
+(Add Screenshot Here)
+
+### API Response
+
+(Add Screenshot Here)
+
+---
+
+# ✅ Verification
+
+```bash
+docker ps
+```
+
+Expected Output
+
+- Container Running
+- Port 5001 Active
+
+---
+
+# 📚 Internship
+
+**CodSoft DevOps Internship**
+
+### Task 1
+
+Dockerized Web Application
+
+---
+
+# 👨‍💻 Author
+
+**Himanshu Chhokar**
+
+GitHub: https://github.com/YourUsername
