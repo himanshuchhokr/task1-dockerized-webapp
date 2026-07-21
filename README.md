@@ -1,87 +1,104 @@
-# Task 1 — Dockerized Web Application
+# Task 1 - Dockerized Web Application
 
-CodSoft DevOps Internship — Task 1 submission.
+## 👨‍💻 Developer
+**Himanshu Chhokar**
 
-A small Flask web app (profile card + JSON status endpoint), containerized with Docker.
+## 📖 Project Description
+This project is a Dockerized Python Flask web application developed as part of the CodSoft DevOps Internship.
 
-## Task Checklist
+The application displays a portfolio webpage and provides a REST API endpoint to verify that the application is running successfully.
 
-- [x] Install Docker and create a containerized web application
-- [x] Write a Dockerfile to package the application and its dependencies
-- [x] Build and run the Docker image locally
-- [x] Verify the application is accessible through the browser
-- [ ] Bonus: Push the Docker image to Docker Hub (commands below)
+---
 
-## Project Structure
+## 🛠 Technologies Used
+
+- Python
+- Flask
+- Gunicorn
+- Docker
+- HTML
+- CSS
+- JavaScript
+
+---
+
+## 📂 Project Structure
 
 ```
 task1-dockerized-webapp/
-├── app.py                 # Flask app (routes: /, /about, /api/status)
+│
+├── app.py
 ├── requirements.txt
 ├── Dockerfile
-├── docker-compose.yml      # optional one-command run
+├── docker-compose.yml
+├── static/
 ├── templates/
-│   ├── index.html
-│   └── about.html
-└── static/css/style.css
+└── README.md
 ```
 
-## Run Locally (without Docker)
+---
+
+## 🚀 How to Run
+
+### Build Docker Image
 
 ```bash
-python -m venv venv
-source venv/bin/activate        # Windows: venv\Scripts\activate
-pip install -r requirements.txt
-python app.py
+docker build -t docker-webapp .
 ```
-Visit http://127.0.0.1:5000
 
-## Run With Docker
+### Run Container
 
 ```bash
-# 1. Build the image
-docker build -t task1-dockerized-webapp .
-
-# 2. Run the container
-docker run -d -p 5000:5000 --name task1-app task1-dockerized-webapp
-
-# 3. Verify
-curl http://localhost:5000/api/status
-# or open http://localhost:5000 in your browser
-
-# 4. Stop & remove when done
-docker stop task1-app && docker rm task1-app
+docker run -p 5001:5000 docker-webapp
 ```
 
-Or with docker-compose (does build + run in one step):
+---
+
+## API Endpoint
+
+```
+GET /api/status
+```
+
+Example Response
+
+```json
+{
+  "status": "running",
+  "message": "Task 1 - Dockerized Web Application is live!"
+}
+```
+
+---
+
+## Docker Verification
+
 ```bash
-docker compose up --build
+docker ps
 ```
 
-## Bonus: Push to Docker Hub
+Container should be running successfully.
 
-```bash
-docker login
-docker tag task1-dockerized-webapp <your-dockerhub-username>/task1-dockerized-webapp:latest
-docker push <your-dockerhub-username>/task1-dockerized-webapp:latest
+---
+
+## Output
+
+Application URL
+
+```
+http://localhost:5001
 ```
 
-Anyone can then run it with just:
-```bash
-docker run -p 5000:5000 <your-dockerhub-username>/task1-dockerized-webapp:latest
+API URL
+
+```
+http://localhost:5001/api/status
 ```
 
-## What the Dockerfile Does (for the video explanation)
+---
 
-1. Starts from a lightweight official `python:3.12-slim` base image
-2. Copies `requirements.txt` first and installs dependencies — this layer gets cached, so rebuilding after a code change doesn't reinstall packages every time
-3. Copies the rest of the application code
-4. Runs the app with **Gunicorn** (a production WSGI server) instead of Flask's built-in dev server — this is the same pattern used in real deployments
+## Internship
 
-## Endpoints
+CodSoft DevOps Internship
 
-| Route | Description |
-|---|---|
-| `/` | Profile card home page |
-| `/about` | About this app |
-| `/api/status` | JSON health check — `{"status": "running", ...}` |
+Task 1 - Dockerized Web Application
