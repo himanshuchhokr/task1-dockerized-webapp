@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1 — Dockerized Web Application</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="card">
+        <span class="badge">🐳 Running inside Docker</span>
+        <h1>{{ profile.name }}</h1>
+        <p class="role">{{ Welcome Himanshu Chhokar }}</p>
+        <p class="college">{{ profile.college }}</p>
+
+        <div class="skills">
+            {% for skill in profile.skills %}
+                <span class="skill-pill">{{ skill }}</span>
+            {% endfor %}
+        </div>
+
+        <div class="links">
+            <a href="{{ profile.github }}" target="_blank">GitHub</a>
+            <a href="{{ profile.linkedin }}" target="_blank">LinkedIn</a>
+            <a href="/about">About this app</a>
+            <a href="/api/status">API Status</a>
+        </div>
+
+        <footer>CodSoft DevOps Internship &middot; Task 1 &middot; {{ year }}</footer>
+    </div>
+</body>
+</html>
